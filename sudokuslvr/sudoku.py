@@ -12,7 +12,15 @@ class Grid :
         '''
         self.list = list
         blob = ""
-        blob+="="*13+"\n"
+        for i in range(9):
+            blob+="||\n"
+            if i%3 == 0:
+                blob+="="*29+"\n"
+            for j in range(9):
+                if j%3 == 0:
+                    blob+="|| "
+                blob+= str(self.list[i*9+j])+" "
+        blob+="||"+"\n"+"="*29
         self.blob = blob
         return self
 
